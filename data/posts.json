@@ -1,33 +1,5 @@
 [
   {
-    "id": "059c279606",
-    "topic": "MLOps and AI governance",
-    "title": "MLOps and AI governance",
-    "subtitle": "AI agents need guardrails, monitoring, and clear handoffs. Autonomy without governance becomes risk.",
-    "caption": "One AI idea worth using today: MLOps and AI governance\n\nAI agents need guardrails, monitoring, and clear handoffs. Autonomy without governance becomes risk.\n\nPractical move: Ask better questions before asking for faster answers.\n\nMotivation: You do not need to master every AI tool. You need to build the habit of learning, testing, and applying AI where it creates real value.\n\nFollow for simple, practical AI ideas.\n\n#AI #ArtificialIntelligence #GenAI #AIMindset #TechCareer #FutureOfWork",
-    "provider": "built-in",
-    "image_filename": "ai_post_059c279606.jpg",
-    "status": "draft",
-    "created_at": "2026-06-12T11:38:28",
-    "published_at": null,
-    "instagram_media_id": null,
-    "last_error": null
-  },
-  {
-    "id": "04688195ab",
-    "topic": "AI productivity habits",
-    "title": "AI productivity habits",
-    "subtitle": "AI works best when it supports a clear human decision, not when it replaces thinking.",
-    "caption": "Build this AI habit: AI productivity habits\r\n\r\nAI works best when it supports a clear human decision, not when it replaces thinking.\r\n\r\nPractical move: Start with one workflow you repeat every week.\r\n\r\nMotivation: You do not need to master every AI tool. You need to build the habit of learning, testing, and applying AI where it creates real value.\r\n\r\nSave this if you are building your AI skills.\r\n\r\n#AI #ArtificialIntelligence #GenAI #AIMindset #TechCareer #FutureOfWork",
-    "provider": "built-in",
-    "image_filename": "ai_post_04688195ab.jpg",
-    "status": "draft",
-    "created_at": "2026-06-12T11:36:09",
-    "published_at": null,
-    "instagram_media_id": null,
-    "last_error": "No public_media_base_url configured. Meta cannot fetch local files. Deploy the app or host generated images over HTTPS."
-  },
-  {
     "id": "2cf32c7bc2",
     "topic": "MLOps and AI governance",
     "title": "MLOps and AI governance",
