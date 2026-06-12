@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div>
+    <h1>Daily AI Instagram Posts</h1>
+    <p>Generate informative, motivating AI content, create a square post image, review the caption, and publish when your official Instagram API setup is ready.</p>
+  </div>
+  <div class="card status-card">
+    <h3>API status</h3>
+    <p class="{{ 'ok' if account.ok else 'bad' }}">{{ account.message }}</p>
+    {% if account.data %}<pre>{{ account.data }}</pre>{% endif %}
+  </div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>Create a post</h2>
+    <form method="post" action="{{ url_for('generate_route') }}">
+      <label>Topic</label>
+      <select name="topic">
+        <option value="__random__">Random topic</option>
+        {% for topic in config.topics %}
+          <option value="{{ topic }}">{{ topic }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Generate Draft</button>
+    </form>
+  </div>
+  <div class="card">
+    <h2>Scheduler</h2>
+    <p><strong>Daily time:</strong> {{ config.daily_time }}</p>
+    <p><strong>Next run:</strong> {{ next_run or "Not scheduled" }}</p>
+    <p><strong>Auto-generate:</strong> {{ "Yes" if config.auto_generate else "No" }}</p>
+    <p><strong>Auto-publish:</strong> {{ "Yes" if config.auto_publish else "No" }}</p>
+    <p><strong>Public media URL:</strong> {{ public_base or "Not configured" }}</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Recent posts</h2>
+  {% if posts %}
+    <div class="post-list">
+      {% for post in posts %}
+        <a class="post-row" href="{{ url_for('view_post', post_id=post.id) }}">
+          <img src="{{ url_for('static', filename='generated/' ~ post.image_filename) }}" alt="post image">
+          <div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.topic }} · {{ post.status }} · {{ post.created_at }}</p>
+            {% if post.last_error %}<p class="bad">{{ post.last_error }}</p>{% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No posts yet. Generate your first draft.</p>
+  {% endif %}
+</section>
+{% endblock %}

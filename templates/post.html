@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="grid two post-detail">
+  <section class="card">
+    <img class="preview" src="{{ url_for('static', filename='generated/' ~ post.image_filename) }}" alt="Generated Instagram post">
+    <p><strong>Status:</strong> {{ post.status }}</p>
+    <p><strong>Provider:</strong> {{ post.provider }}</p>
+    <p><strong>Created:</strong> {{ post.created_at }}</p>
+    {% if post.published_at %}<p><strong>Published:</strong> {{ post.published_at }}</p>{% endif %}
+    {% if image_url %}
+      <p><strong>Public image URL:</strong> {{ image_url }}</p>
+    {% else %}
+      <p class="warning">No public media URL configured. You can preview locally, but automatic Instagram publishing needs a public HTTPS image URL.</p>
+    {% endif %}
+  </section>
+  <section class="card">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.subtitle }}</p>
+    <form method="post" action="{{ url_for('update_caption_route', post_id=post.id) }}">
+      <label>Caption</label>
+      <textarea name="caption" rows="18">{{ post.caption }}</textarea>
+      <button type="submit">Save Caption</button>
+    </form>
+    <div class="actions">
+      <form method="post" action="{{ url_for('approve_route', post_id=post.id) }}">
+        <button type="submit" class="secondary">Approve</button>
+      </form>
+      <form method="post" action="{{ url_for('publish_route', post_id=post.id) }}">
+        <button type="submit">Publish to Instagram</button>
+      </form>
+    </div>
+    {% if post.last_error %}
+      <div class="message error">{{ post.last_error }}</div>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

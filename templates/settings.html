@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card wide">
+  <h1>Settings</h1>
+  <form method="post" class="settings-form">
+    <div class="grid two">
+      <div>
+        <label>Brand name</label>
+        <input name="brand_name" value="{{ config.brand_name }}">
+      </div>
+      <div>
+        <label>Instagram handle</label>
+        <input name="instagram_handle" value="{{ config.instagram_handle }}">
+      </div>
+    </div>
+
+    <label>Default topic</label>
+    <input name="default_topic" value="{{ config.default_topic }}">
+
+    <label>Tone</label>
+    <input name="tone" value="{{ config.tone }}">
+
+    <label>Daily time</label>
+    <input name="daily_time" type="time" value="{{ config.daily_time }}">
+
+    <label>Public media base URL</label>
+    <input name="public_media_base_url" placeholder="https://your-domain.com/static/generated" value="{{ config.public_media_base_url }}">
+    <p class="muted">Meta must be able to fetch the generated JPG from a public HTTPS URL. Localhost will not work for API publishing.</p>
+
+    <label>Topics, one per line</label>
+    <textarea name="topics" rows="10">{{ config.topics | join('\n') }}</textarea>
+
+    <label>Hashtags, comma or line separated</label>
+    <textarea name="hashtags" rows="4">{{ config.hashtags | join(', ') }}</textarea>
+
+    <div class="checks">
+      <label><input type="checkbox" name="auto_generate" {% if config.auto_generate %}checked{% endif %}> Auto-generate every day</label>
+      <label><input type="checkbox" name="auto_publish" {% if config.auto_publish %}checked{% endif %}> Auto-publish after generation</label>
+      <label><input type="checkbox" name="require_manual_approval" {% if config.require_manual_approval %}checked{% endif %}> Require manual approval</label>
+    </div>
+
+    <button type="submit">Save Settings</button>
+  </form>
+</section>
+{% endblock %}

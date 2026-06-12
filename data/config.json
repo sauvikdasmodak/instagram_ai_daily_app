@@ -1,0 +1,34 @@
+{
+  "brand_name": "AI Daily Spark",
+  "instagram_handle": "ai_knowlege_2026",
+  "default_topic": "Practical AI for everyday work",
+  "topics": [
+    "Practical AI for everyday work",
+    "Responsible AI",
+    "Agentic AI",
+    "Prompt engineering",
+    "AI productivity habits",
+    "RAG and enterprise search",
+    "MLOps and AI governance",
+    "AI security",
+    "Cloud AI",
+    "Small language models",
+    "AI for career growth",
+    "AI leadership mindset"
+  ],
+  "tone": "informative, motivating, professional, simple",
+  "hashtags": [
+    "AI",
+    "ArtificialIntelligence",
+    "GenAI",
+    "AIMindset",
+    "TechCareer",
+    "FutureOfWork"
+  ],
+  "daily_time": "08:30",
+  "timezone": "America/Toronto",
+  "auto_generate": true,
+  "auto_publish": true,
+  "require_manual_approval": true,
+  "public_media_base_url": ""
+}
